@@ -33,6 +33,7 @@ sudo pacman -S neovim fuse2 unzip curl wget vlc ufw btop \
   waybar libpulse libappindicator-gtk3 libdbusmenu-gtk3 upower \
   hyprsunset hyprpaper --noconfirm
 
+sudo usermod -aG docker $USER
 
 echo "Adding config files"
 
