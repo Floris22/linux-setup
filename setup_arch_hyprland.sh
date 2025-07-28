@@ -26,7 +26,7 @@ rm -rf "$tempdir"
 
 echo "Installing packages"
 
-yay -S cursor-bin onlyoffice-bin hoppscotch-bin clipse brave-bin
+yay -S cursor-bin onlyoffice-bin hoppscotch-bin clipse brave-bin --noconfirm
 
 sudo pacman -S neovim fuse2 unzip curl wget vlc ufw btop \
   docker docker-compose docker-buildx firefox udiskie \
