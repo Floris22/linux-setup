@@ -19,6 +19,8 @@ fi
 
 echo "Battery detected: $BATTERY_NAME"
 echo "Battery threshold control is supported."
+echo
+echo
 
 # Create the systemd service file
 SERVICE_FILE="/etc/systemd/system/battery-charge-threshold.service"
@@ -45,7 +47,10 @@ sudo systemctl start battery-charge-threshold.service
 # Verify the service
 BATTERY_STATUS=$(cat /sys/class/power_supply/${BATTERY_NAME}/status)
 echo "Battery status: $BATTERY_STATUS"
+echo
+echo
 
 echo "To apply changes to the threshold, edit the service file at $SERVICE_FILE and restart the service with:"
 echo "sudo systemctl daemon-reload"
 echo "sudo systemctl restart battery-charge-threshold.service"
+echo
