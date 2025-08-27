@@ -28,10 +28,10 @@ echo "Installing packages"
 
 yay -S cursor-bin onlyoffice-bin hoppscotch-bin clipse brave-bin --noconfirm
 
-sudo pacman -S neovim fuse2 unzip curl wget vlc ufw btop \
+sudo pacman -S neovim fuse2 unzip curl wget vlc ufw btop tmux \
   docker docker-compose docker-buildx firefox udiskie bat eza \
   waybar libpulse libappindicator-gtk3 libdbusmenu-gtk3 upower \
-  hyprsunset hyprpaper --noconfirm
+  hyprsunset hyprpaper gnome-keyring --noconfirm
 
 sudo usermod -aG docker $USER
 
