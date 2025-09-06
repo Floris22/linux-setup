@@ -10,7 +10,12 @@ bind 'TAB:menu-complete'
 # ─────────────────────────────────────────────────────
 # Environment Variables
 # ─────────────────────────────────────────────────────
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/Dev/go
+export GOBIN=$GOPATH/bin
+export PATH=$GOROOT/bin:$GOBIN:$PATH
 export PATH=$PATH:$(go env GOPATH)/bin
+
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 
