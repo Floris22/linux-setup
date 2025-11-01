@@ -1,0 +1,142 @@
+[
+  {
+    "layer": "top",
+    "position": "top",
+
+    "height": 24,
+    "spacing": 5,
+
+    "modules-left": [
+      "custom/launcher",
+      "cpu",
+      "memory"
+    ],
+    "modules-center": [
+      "custom/page1",
+      "custom/page2",
+      "custom/page3",
+      "custom/page4",
+      "custom/page5",
+      "custom/page6"
+    ],
+    "modules-right": [
+      "tray",
+      "network",
+      "custom/separator",
+      "pulseaudio",
+      "custom/separator",
+      "battery",
+      "custom/separator",
+      "clock"
+    ],
+
+    "custom/page1": {
+      "exec": "~/.config/waybar/scripts/page.sh 1",
+      "exec-persistent": true,
+      "return-type": "json"
+    },
+    "custom/page2": {
+      "exec": "~/.config/waybar/scripts/page.sh 2",
+      "exec-persistent": true,
+      "return-type": "json"
+    },
+    "custom/page3": {
+      "exec": "~/.config/waybar/scripts/page.sh 3",
+      "exec-persistent": true,
+      "return-type": "json"
+    },
+    "custom/page4": {
+      "exec": "~/.config/waybar/scripts/page.sh 4",
+      "exec-persistent": true,
+      "return-type": "json"
+    },
+    "custom/page5": {
+      "exec": "~/.config/waybar/scripts/page.sh 5",
+      "exec-persistent": true,
+      "return-type": "json"
+    },
+    "custom/page6": {
+      "exec": "~/.config/waybar/scripts/page.sh 6",
+      "exec-persistent": true,
+      "return-type": "json"
+    },
+
+    "custom/launcher": {
+      "format": "󱗼",
+      "on-click": "wofi --show drun",
+      "tooltip": false
+    },
+
+    "tray": {
+      "spacing": 20,
+      "icon-size": 16
+    },
+
+    "clock": {
+      "format": "{:%H:%M}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "custom/separator": {
+		"exec": "echo '{\"text\":\"|\"}'",
+		"return-type": "json",
+		"format": "<span color='#555'>{text}</span>",
+		"markup": "pango",
+		"interval": 3600
+	},
+
+    "cpu": {
+      "format": " {usage}%"
+    },
+
+    "memory": {
+      "format": " {}%"
+    },
+
+    "network": {
+		"interface": ["enp.*", "eth.*"],
+		"interval": 3,
+		"markup": "pango",
+
+		"format-ethernet":    "<span color='#ffffff'>󰈀 </span> up",
+		"format-wifi":        "<span color='#ffffff'> </span> {essid}",
+		"format-unknown":     "<span color='#ffffff'>󰈂 </span> up",
+		"format-disconnected":"<span color='#E06C75'> </span> down",
+
+		"on-click": "nm-connection-editor"
+	},
+
+    "battery": {
+      "states": {
+        "warning": 20,
+        "critical": 10
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": "{icon} {capacity}%",
+      "format-plugged": "{icon} {capacity}%",
+      "format-alt": "{icon} {time}",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+
+    "pulseaudio": {
+      "scroll-step": 5,
+      "max-volume": 100,
+
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-right": "pavucontrol",
+
+      "format":  "<span color='#ffffff'>{icon} </span> <span color='#ffffff'>{volume}%</span>",
+      "format-muted": "<span color='#ffffff'> </span> muted",
+      "format-icons": {
+			"default": "",
+			"muted":   ""
+	  }
+    }
+  }
+]

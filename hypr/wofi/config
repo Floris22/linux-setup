@@ -1,0 +1,14 @@
+[config]
+allow_images=true
+width=620
+prompt=Search
+height=440
+term=ghostty
+hide_scroll=true
+print_command=true
+insensitive=true
+columns=1
+no_actions=true
+stylesheet=./styles.css
+key_down=Ctrl-n
+key_up=Ctrl-p
