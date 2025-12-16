@@ -1,0 +1,163 @@
+{
+  "notification_panel": {
+    "button": false
+  },
+  "inlay_hints": {
+    "show_parameter_hints": false,
+    "show_type_hints": false
+  },
+  "inline_code_actions": true,
+  "relative_line_numbers": "enabled",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Material Icon Theme",
+    "dark": "Zed (Default)"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "drag_and_drop": false,
+    "dock": "right",
+    "default_width": 330,
+    "indent_size": 22,
+    "auto_fold_dirs": false
+  },
+  "agent_servers": {
+    "OpenCode": {
+      "type": "custom",
+      "command": "opencode",
+      "args": ["acp"]
+    }
+  },
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "openrouter",
+      "model": "anthropic/claude-opus-4.5"
+    },
+    "dock": "left",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-5"
+    },
+    "model_parameters": []
+  },
+  "language_models": {
+    "openai_compatible": {
+      "OpenRouter": {
+        "api_url": "https://openrouter.ai/api/v1",
+        "available_models": [
+          {
+            "name": "moonshotai/kimi-k2-0905@preset/code-agent",
+            "display_name": "Kimi K2 0905",
+            "max_tokens": 32000
+          },
+          {
+            "name": "inception/mercury-coder@preset/code-agent",
+            "display_name": "Mercury Coder",
+            "max_tokens": 32000
+          },
+          {
+            "name": "anthropic/claude-haiku-4.5@preset/code-agent",
+            "display_name": "Claude Haiku 4.5",
+            "max_tokens": 32000
+          },
+          {
+            "name": "z-ai/glm-4.6@preset/code-agent",
+            "display_name": "GLM 4.6",
+            "max_tokens": 32000
+          }
+        ]
+      }
+    }
+  },
+  "edit_predictions": {
+    "disabled_globs": [".env", ".env.*"],
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+      "enterprise_uri": null
+    },
+    "enabled_in_text_threads": false
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "preview_tabs": {
+    "enabled": false
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "dark",
+    "light": "One Dark",
+    "dark": "Gruvbox Dark Soft"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "outline_panel": {
+    "button": false
+  },
+  "diagnostics": {
+    "button": false,
+    "inline": {
+      "enabled": false // to show inline warnings and errors without even hovering
+    }
+  },
+  "search": {
+    "button": false
+  },
+  "debugger": {
+    "button": false
+  },
+  "terminal": {
+    "dock": "bottom",
+    "button": false
+  },
+  "cursor_blink": false,
+  "scrollbar": { "show": "never" },
+  "vertical_scroll_margin": 4,
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_sign_in": true,
+    "show_user_picture": false,
+    "show_project_items": false
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "languages": {
+    "TypeScript": {
+      "language_servers": ["!typescript-language-server", "!vtsls"],
+      "formatter": { "external": { "command": "none" } }
+    },
+    "JavaScript": {
+      "language_servers": ["!typescript-language-server", "!vtsls"],
+      "formatter": { "external": { "command": "none" } }
+    },
+    "Python": {
+      "language_servers": ["!pylsp", "pyright"]
+    }
+  },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python": {
+          "pythonPath": "backend/.venv/bin/python"
+        }
+      }
+    }
+  }
+}
