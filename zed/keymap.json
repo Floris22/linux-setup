@@ -1,0 +1,103 @@
+[
+  // {
+  //   "context": "!(vim_mode == insert) && !Terminal",
+  //   "bindings": {
+  //     "space f": "file_finder::Toggle",
+  //     "ctrl-shift-b": null
+  //   }
+  // },
+
+  // Need tv (sudo pacman -S television) for this to work
+  {
+    "context": "!(vim_mode == insert) && !Terminal && !not_editing",
+    "bindings": {
+      "space f": [
+        "task::Spawn",
+        { "task_name": "Television File Finder", "reveal_target": "center" }
+      ]
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "n": "project_panel::NewFile",
+      "N": "project_panel::NewDirectory",
+      "s h": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g c": ["editor::ToggleComments", { "advance_downwards": false }]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "space e": "editor::Hover",
+      "space l": "pane::ActivateNextItem",
+      "space h": "pane::ActivatePreviousItem",
+      "space o": "outline::Toggle",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-shift-h": "pane::JoinIntoNext",
+      "ctrl-shift-l": "pane::SplitAndMoveRight"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "alt-tab": "editor::AcceptEditPrediction",
+      "alt-l": null
+    }
+  },
+  {
+    "context": "Editor && edit_prediction_conflict",
+    "bindings": {
+      "alt-tab": "editor::AcceptEditPrediction",
+      "alt-l": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "tab": "editor::Tab"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "tab": "editor::ComposeCompletion"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || vim_mode == replace || vim_mode == waiting",
+    "bindings": {
+      "tab": "vim::Tab"
+    }
+  },
+  {
+    "context": "vim_mode == literal",
+    "bindings": {
+      "tab": ["vim::Literal", ["tab", "\u0009"]]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-n": null
+    }
+  },
+  {
+    "context": "(FileFinder || FileFinder > Picker > Editor)",
+    "bindings": {
+      "ctrl-p": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-p": null
+    }
+  }
+]
