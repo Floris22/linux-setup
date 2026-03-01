@@ -11,8 +11,8 @@ cd "$tempdir/paru"
 makepkg -si
 
 # install other apps
-paru -S onlyoffice-bin brave-bin curl ripgrep \
-    unzip vlc btop bat eza zed ghostty --noconfirm
+paru -S onlyoffice-bin brave-bin curl ripgrep ffmpeg \
+    unzip vlc vlc-plugin-ffmpeg btop bat eza ghostty --noconfirm
 
 # starship install
 curl -sS https://starship.rs/install.sh | sh
