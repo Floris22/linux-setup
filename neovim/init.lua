@@ -130,16 +130,13 @@ vim.keymap.set(
 
 --- Treesitter
 
--- only highlight with treesitter
-vim.cmd('syntax off')
+local treesitter = require('nvim-treesitter')
 
-require('nvim-treesitter.config').setup{
-    highlight = { enable = true },
-    ensure_installed = { 'go', 'lua', 'vim' },
-}
+treesitter.setup({})
+treesitter.install({ 'go', 'lua', 'vim' })
 
 vim.api.nvim_create_autocmd('FileType', {
-    callback = function() pcall(vim.treesitter.start) end,
+    callback = function(args) pcall(vim.treesitter.start, args.buf) end,
 })
 
 --- LSP
